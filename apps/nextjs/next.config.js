@@ -31,7 +31,7 @@ const config = {
         stream: false,
         crypto: false,
         "pg-native": false,
-        "pg": false,
+        pg: false,
       };
       config.resolve.alias = {
         ...config.resolve.alias,
@@ -40,7 +40,7 @@ const config = {
         stream: false,
         crypto: false,
         "pg-native": false,
-        "pg": false,
+        pg: false,
       };
     }
     return config;

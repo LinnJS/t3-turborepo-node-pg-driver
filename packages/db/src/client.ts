@@ -5,7 +5,6 @@ import * as schema from "./schema";
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL,
-
 });
 
-export const db = drizzle({ client: pool, schema,  });
+export const db = drizzle({ client: pool, schema });
