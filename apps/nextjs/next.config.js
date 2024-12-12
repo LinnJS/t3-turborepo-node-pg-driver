@@ -1,14 +1,12 @@
 import createJiti from "jiti";
 import { fileURLToPath } from "url";
 
-// Import env files to validate at build time. Use jiti so we can load .ts files in here.
 createJiti(fileURLToPath(import.meta.url))("./src/env");
 
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
 
-  /** Enables hot reloading for local packages without a build step */
   transpilePackages: [
     "@acme/api",
     "@acme/auth",
@@ -17,7 +15,6 @@ const config = {
     "@acme/validators",
   ],
 
-  /** We already do linting and typechecking as separate tasks in CI */
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 
@@ -29,18 +26,11 @@ const config = {
         fs: false,
         path: false,
         stream: false,
-        crypto: false,
-        "pg-native": false,
-        pg: false,
       };
       config.resolve.alias = {
         ...config.resolve.alias,
-        fs: false,
-        path: false,
-        stream: false,
-        crypto: false,
-        "pg-native": false,
         pg: false,
+        "pg-native": false,
       };
     }
     return config;
