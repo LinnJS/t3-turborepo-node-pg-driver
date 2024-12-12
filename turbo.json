@@ -32,6 +32,10 @@
     "//#clean": {
       "cache": false
     },
+    "clean:all": {
+      "cache": false,
+      "dependsOn": ["^clean", "^//#clean"]
+    },
     "push": {
       "cache": false,
       "interactive": true
